@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Real World Crypto 2021 - Session 13: Invited Talk &middot; Paul&#39;s 20% Time</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Paul Hadfield&#39;s 20% Time">
+		<meta name="description" content="Paul Hadfield is a software engineer, musician and tinkerer in London UK">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Paul&#39;s 20% Time">
+		<meta name="og:title" content="Real World Crypto 2021 - Session 13: Invited Talk">
+		<meta name="og:url" content="https://phad.github.io/rwc2021/2021-01-14_13a/">
+		
+		<meta name="og:image" content="https://phad.github.io/images/phad-duck-256.png">
+		
+		
+
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		<!--[if lte IE 8]><script src='https://phad.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://phad.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://phad.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://phad.github.io/" class="image avatar"><img src="https://phad.github.io/images/phad-duck-256.png" alt="" /></a>
+	
+	
+		<h1>What I get up to when I&rsquo;m on my non-working days.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://phad.github.io/">Home</a></li>
+			
+				<li><a href="https://phad.github.io/resume/">CV</a></li>
+			
+				<li><a href="https://phad.github.io/rwc2021/">RWC</a></li>
+			
+				<li><a href="https://phad.github.io/posts/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Real World Crypto 2021 - Session 13: Invited Talk</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-14 14:00:00 &#43;0000 UTC">2021-01-14</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+	</span>
+
+	<p>
+	    <p><a href="../2021-01-14_12">Prev</a> | <a href="..">Up</a> | <a href="../2021-01-14_13">Next</a></p>
+<p><a href="http://cs.brown.edu/people/alysyans/"><strong>Anna Lysyanskaya</strong></a> (Brown Uni) / <em>Privacy-Preserving Authentication &ndash; From Theory to Practice</em> <a href="https://youtu.be/hvDuxJ3mbMo?t=3">video</a></p>
+<p>What makes &lsquo;you&rsquo;, you?</p>
+<ul>
+<li>offline - I think, therefore I am (after Descartes)</li>
+<li>online - I login, therefore I am</li>
+</ul>
+<p>Nowadays, this is embodied by cloud providers - you log-in to them, they do the rest<br>
+But here&rsquo;s an alternative: &ldquo;Self-sovereign Identity&rdquo;</p>
+<ul>
+<li>no-one can act on your behalf - your crypto PK is needed for that</li>
+<li>you can make assertions on your identity without needy cloudy help</li>
+<li>no-one else controls your data</li>
+</ul>
+<p>The term was introduced in <a href="https://www.lifewithalacrity.com/2016/04/the-path-to-self-soverereign-identity.html"><em>The path to self-soverereign identity</em></a></p>
+<p>But it isn&rsquo;t very academic, and doesn&rsquo;t mention David Chaum who in 1984 wrote <a href="https://ieeexplore.ieee.org/document/6234815"><em>A New Paradigm for Individuals in the Information Age</em></a> in which individuals go by different pseudonyms on each service they use, and can &lsquo;inject&rsquo; their pseudonym into the digitally signed credentials issued by those services without wrecking its signature</p>
+<p>Tim Berners-Lee is also looking to do this with his <a href="https://www.nytimes.com/2021/01/10/technology/tim-berners-lee-privacy-internet.html">SOLID concept</a></p>
+<p>If you don&rsquo;t care about privacy then existing digital signatures are just fine.<br>
+But for privacy-preserving cases you end up needing ZK proofs, secure two-party computation, etc.</p>
+<p>Anonymous Credentials: you have a privacy-conscious user, and a verifier.<br>
+If you identify yourself with the same thing across sites (e.g. a certificate) then you lose anonymity eventually because all the verifications could be linked.  Instead:</p>
+<ul>
+<li>user : give me access</li>
+<li>verifier : convince me you&rsquo;re authorized</li>
+<li>user : here&rsquo;s a ZK proof: a commitment C to my identity/secret key, and a ZK proof of knowledge of the CA&rsquo;s signature on C&rsquo;s content</li>
+</ul>
+<p>Commitment schemes could be: Pedersen, Fujisaki-Okamoto, Groth-Sahai</p>
+<p>AnonCred systems can include other features:</p>
+<ul>
+<li>attributes and selective disclosure;</li>
+<li>limited-use creds - applns in ecash like spend upto $X anonymously but not more;</li>
+<li>identity escrow - remain anonymous but permit selective decryptions in emergency</li>
+<li>revocation</li>
+</ul>
+<p>Some implementations: DAA (present in TPM chipsets); Idemix; Hyperledger Indy</p>
+<p>Is anything standardized? It&rsquo;s tricky&hellip; cryptographers approaches to AnonCred systems is &ldquo;too complex for a reasonable standard&rdquo; (ie.. for non crypto-folk to get)</p>
+<p>Maybe they just need rebranding&hellip; Mercurial Signature Scheme.<br>
+Here: rather sign one message, you sign a &lsquo;representative of an equivalence class of messages&rsquo;, using not one public key, but a &lsquo;representative of an equivalence class fo public keys&rsquo;<br>
+Property: for preservation of privacy, it must be hard to determine if two X&rsquo;s belong to the same equivalence class.<br>
+For public keys, two PKs might be considered equivalent if they have the same underlying private key.</p>
+<p>Alternative: Ring Signatures</p>
+<p>Real-world application: Anonymous Hardware Attestation AHA<br>
+CA-&gt;Boot-loader-&gt;OS-&gt;App-&gt;Data with credentials at each stage signed up upstream.</p>
+<hr>
+
+	</p>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/hadfieldp" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/phad" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		<li><a href="//linkedin.com/in/hadfieldp" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+		
+		
+		
+		<li><a href="//instagram.com/hadfieldp" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>© Paul Hadfield</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://phad.github.io/js/jquery.min.js"></script>
+<script src="https://phad.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://phad.github.io/js/skel.min.js"></script>
+<script src="https://phad.github.io/js/util.js"></script>
+
+<script src="https://phad.github.io/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

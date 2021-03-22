@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Real World Crypto 2021 - Session 12: Crypto for the Cloud &middot; Paul&#39;s 20% Time</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Paul Hadfield&#39;s 20% Time">
+		<meta name="description" content="Paul Hadfield is a software engineer, musician and tinkerer in London UK">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Paul&#39;s 20% Time">
+		<meta name="og:title" content="Real World Crypto 2021 - Session 12: Crypto for the Cloud">
+		<meta name="og:url" content="https://phad.github.io/rwc2021/2021-01-14_12/">
+		
+		<meta name="og:image" content="https://phad.github.io/images/phad-duck-256.png">
+		
+		
+
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		<!--[if lte IE 8]><script src='https://phad.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://phad.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://phad.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://phad.github.io/" class="image avatar"><img src="https://phad.github.io/images/phad-duck-256.png" alt="" /></a>
+	
+	
+		<h1>What I get up to when I&rsquo;m on my non-working days.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://phad.github.io/">Home</a></li>
+			
+				<li><a href="https://phad.github.io/resume/">CV</a></li>
+			
+				<li><a href="https://phad.github.io/rwc2021/">RWC</a></li>
+			
+				<li><a href="https://phad.github.io/posts/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Real World Crypto 2021 - Session 12: Crypto for the Cloud</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-14 14:00:00 &#43;0000 UTC">2021-01-14</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+	</span>
+
+	<p>
+	    <p><a href="../2021-01-14_11">Prev</a> | <a href="..">Up</a> | <a href="../2021-01-14_13a">Next</a></p>
+<p>Session <a href="https://www.youtube.com/watch?v=CiH6iqjWpt8">video</a></p>
+<hr>
+<p><a href="https://www.isg.rhul.ac.uk/~kp/"><strong>Kenny Patterson</strong></a> (ETH Zurich) / <em>SWiSSSE: System-Wide Security for Searchable Symmetric Encryption</em> / <a href="http://ia.cr/2020/1328">paper</a> <a href="https://youtu.be/CiH6iqjWpt8?t=5">video</a> <a href="https://eprint.iacr.org/2020/1328.pdf">slides</a></p>
+<p>There&rsquo;s a <a href="http://github.com/SWiSSSE-crypto/SWiSSSE">github repo</a></p>
+<p>Searchable Encryption: how do you permit keyword searching over a corpus of encrypted documents?</p>
+<p>Symmetric: they&rsquo;re only allowing use of symmetric techniques, for efficiency.</p>
+<p>Server might have a search index, a keyvalue store, where PRF(search keyword)-&gt;Enc(matching doc ids). All value entries have same size to avoid attacks like freq analysis, so all doc id lists are padded to max size. Client makes search, gets back enc doc IDs, then goes and requests docs by enc id.</p>
+<p>The system security is good at hiding keywords used in search in part one (hitting seach index) but breaks down if someone can analyse traffic in requesting docs by enc docid, as frequency analysis is possible there.</p>
+<p>SWiSSSE is designed to prevent that kind of leakage. It addresses the second freq analysis attack by padding stores out with fake keywords, fake documents, and mixing up of server&rsquo;s data returned in various reads. Clients maintain a stash that is used to mix things up over time and write back to the server (didn&rsquo;t quite get this part).</p>
+<p>The more you want to reduce leakage, the more padding must approach worst-case, and that consumes many resources</p>
+<p>Their reference impl server uses Redis. PRF = HMAC-SHA256 and Enc = AES-GCM</p>
+<hr>
+<p><a href="https://twitter.com/SchmiegSophie"><strong>Sophie Schmieg</strong></a> (Google ISE-Crypto) / <em>What&rsquo;s In A Key? In Band Key Negotiation and How To Avoid It</em> / <a href="">paper</a> <a href="https://youtu.be/CiH6iqjWpt8?t=1045">video</a></p>
+<p>(Unfortunately the audio in this talk had a really bad echo).</p>
+<p><a href="https://www.howmanydayssinceajwtalgnonevuln.com/">How many days since a jwt alg none vulnerability?</a></p>
+<p>In JWT, the &lsquo;alg&rsquo; field, can be (legitimately) set to &lsquo;none&rsquo;. The problem isn&rsquo;t this so much as that there is an &lsquo;alg&rsquo; field at all!</p>
+<p>This allows someone to switch &lsquo;alg&rsquo; to a symmetric scheme, after which if a client provides their public key it&rsquo;d be misinterpreted as symmetric key material. Then anyone could mint a valid token without a problem.  The key ID &lsquo;kid&rsquo; field can be similarly attacked - switch out a real key for one the attacker controls.</p>
+<p>These sorts of issues are seen elsewhere, not just JWT. It&rsquo;s a result of attaching to the ciphertext metadata that dictates what&rsquo;s needed to authenticate and decrypt.<br>
+Similar vuln was found in AWS S3 Client-Side Encryption library (CVE-2020-9812)</p>
+<p>Tink Keys: In <a href="http://github.com/google/tink">Google&rsquo;s Tink API</a> they&rsquo;ve ensured these sorts of vulnerabilities are avoided. The metadata is embedded into the key itself. Key rotation is supported via keysets. You can tell a Google product that uses Tink as keys are expressed in B64 and it&rsquo;s always start with &lsquo;A&rsquo; (this is 01, from the key format&rsquo;s leading version field). There follows the key ID to identify the key to be used in the keyset.</p>
+<p>Takeaways:</p>
+<ol>
+<li>never trust the ciphertext!</li>
+<li>ensure key metadata is part of the key itself - i.e. algo type, algo&rsquo;s required params</li>
+<li>key IDs can&rsquo;t be authenticated as they must be attached to a ciphertext, so key IDs should only be meaningful within a keyset, and should be equally trusted.</li>
+</ol>
+<hr>
+<p><a href="https://web.eecs.umich.edu/~paulgrub/"><strong>Paul Grubbs</strong></a> (Uni Michigan) / <em>Pancake: Frequency Smoothing for Encrypted Data Stores</em> / <a href="https://ia.cr/2020/1501">paper</a> <a href="https://youtu.be/CiH6iqjWpt8?t=2116">video</a></p>
+<p>Many apps are transitioning their data storage requirements to cloud-hosted data stores. Those data stores (e.g. AWS S3, ElastiCache) should not necessarily be trusted.</p>
+<p>Apps may encrypt their key-value pairs for security</p>
+<ul>
+<li>e.g. (K, V) -&gt; (PRF(K), AEAD(V))<br>
+but this doesn&rsquo;t prevent a malicious cloud provider performing access-pattern attacks.</li>
+</ul>
+<p>e.g. on medical data, indexed by patient condition - the cloud provider doesn&rsquo;t know which patient or specifically which condition, but could obtain independently from medical literature the prevalence of conditions. Then with frequency analysis of the data accesses made, work out which PRF(K) is which medical condition. This has been seen in practice.</p>
+<p>Existing solutions:</p>
+<ul>
+<li>Oblivious RAM (ORAM) and Private Information Retrieval (PIR). Threat is an active adversary which might inject it&rsquo;s own accesses. Security is strong but performance is poor; 8x storage requirements and 1600x bandwidth!</li>
+<li>Searchable Symmetric Encryption. Threat is passive adversary. SSE doesn&rsquo;t do well at preventing access pattern attacks but performance is high.</li>
+</ul>
+<p>Pancake introduces a trusted proxy on client side, which smoothes the accesses being made by the client, so that access patterns to the server appear to be uniformly random. Trhoughput is 100x higher than ORAM.</p>
+<p>Possible approaches to smoothing:</p>
+<ul>
+<li>increasing size of the encrypted corpus by including fake or replicated data items. Runs risk of blowing up server-side storage requirements</li>
+<li>injecting fake accesses to the unpopular items, to achieve uniform distribution. This wastes bandwidth and increases datastore load</li>
+</ul>
+<p>Pancake is a mix of the two above.</p>
+<ul>
+<li>replicate just enough of the keys to partially smooth distribution, and fill in the rest with injected fake accesses.</li>
+</ul>
+<p>Challenge is to ensure adversary can&rsquo;t distinguish real and fake accesses by e.g. timing analysis.</p>
+<p>They&rsquo;ve achieved max 3x bandwidth and 2x storage overhead.</p>
+
+	</p>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/hadfieldp" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/phad" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		<li><a href="//linkedin.com/in/hadfieldp" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+		
+		
+		
+		<li><a href="//instagram.com/hadfieldp" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>© Paul Hadfield</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://phad.github.io/js/jquery.min.js"></script>
+<script src="https://phad.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://phad.github.io/js/skel.min.js"></script>
+<script src="https://phad.github.io/js/util.js"></script>
+
+<script src="https://phad.github.io/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

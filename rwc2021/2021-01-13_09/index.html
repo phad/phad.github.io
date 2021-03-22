@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Real World Crypto 2021 - Session 9: Hardware &middot; Paul&#39;s 20% Time</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Paul Hadfield&#39;s 20% Time">
+		<meta name="description" content="Paul Hadfield is a software engineer, musician and tinkerer in London UK">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Paul&#39;s 20% Time">
+		<meta name="og:title" content="Real World Crypto 2021 - Session 9: Hardware">
+		<meta name="og:url" content="https://phad.github.io/rwc2021/2021-01-13_09/">
+		
+		<meta name="og:image" content="https://phad.github.io/images/phad-duck-256.png">
+		
+		
+
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		<!--[if lte IE 8]><script src='https://phad.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://phad.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://phad.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://phad.github.io/" class="image avatar"><img src="https://phad.github.io/images/phad-duck-256.png" alt="" /></a>
+	
+	
+		<h1>What I get up to when I&rsquo;m on my non-working days.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://phad.github.io/">Home</a></li>
+			
+				<li><a href="https://phad.github.io/resume/">CV</a></li>
+			
+				<li><a href="https://phad.github.io/rwc2021/">RWC</a></li>
+			
+				<li><a href="https://phad.github.io/posts/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Real World Crypto 2021 - Session 9: Hardware</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-13 16:00:00 &#43;0000 UTC">2021-01-13</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+	</span>
+
+	<p>
+	    <p><a href="../2021-01-13_08">Prev</a> | <a href="..">Up</a> | <a href="../2021-01-13_10">Next</a></p>
+<p>Session <a href="https://www.youtube.com/watch?v=kO-3Uh7tq60">video</a></p>
+<hr>
+<p><a href="https://researchers.adelaide.edu.au/profile/madura.shelton"><strong>Madura Shelton</strong></a> and <a href="https://cs.adelaide.edu.au/~yval/"><strong>Yuval Yarom</strong></a> (Uni Adelaide) / <em>Rosita: Towards Automatic Elimination of Power-Analysis</em> / <a href="http://ia.cr/2019/1445">paper</a> <a href="https://youtu.be/kO-3Uh7tq60?t=8">video</a> <a href="https://github.com/0xADE1A1DE/Rosita">repo</a></p>
+<p>Side-channel attacks first mooted in 1996 (Kocher)</p>
+<p>Masking values ought to work in theory, but in reality CPUs pipeline, and values from the crypto calculation can be displaced from registers by masked ones, and so get leaked</p>
+<p>Current practice: write s/w , run on a device, coupled up to equipement that e.g. measures voltages - run s/w many times and observe the data leakage via voltage measurements. Fix the s/w, then iterate. This takes a long time.</p>
+<p>The authors have automated some of this using Elmo and Rosita.</p>
+<p>Elmo has a power-model to emulate the voltage consumption of a CPU; there is a differential voltage for each assembler instruction. Use of statistics techniques allow research to figure out which registers being used result in a larger differential voltage, which causes info leakage.</p>
+<p>Some tricks involve injecting a load of no-op (dummy) instructions (e.g. &lsquo;mov r7, r7&rsquo;) into compiled machine code to discourage the CPU from executing the surrounding instructions in the same pipeline.</p>
+<p>Shows graphs of AES and ChaCha being analysed, and how Rosita&rsquo;s injection of masking no-ops remove big spikes from differential voltage graphs.</p>
+<hr>
+<p><a href="https://mjos.fi/"><strong>Markku-Juhani Saarinen</strong></a> (PQShield) and <a href="https://www.bristol.ac.uk/people/person/Ben-Marshall-92b38f82-816c-4581-a090-990be34f718d"><strong>Ben Marshall</strong></a> (Uni Bristol)  / <em>RISC-V Scalar Crypto</em> / <a href="http://ia.cr/2020/930">paper1</a> <a href="http://ia.cr/2020/866">paper2</a> <a href="https://youtu.be/kO-3Uh7tq60?t=904">video</a> <a href="https://github.com/riscv/riscv-crypto">repo</a></p>
+<p>RISC-V is a huge, 200-member consortium. You don&rsquo;t need to be a member to use their IP to &ldquo;build your own CPU&rdquo;. Also anyone can create their own custom ISA extensions.</p>
+<p>RISC-V can do scalar (non-vector) crypto. It&rsquo;s now in opcode/consistency review, will be frozen in Q1 2021. Includes instructions useful for hashes / GCM such as bit rotations and carryless multiply, byte/bit reversal, shuffling.<br>
+More special purpose instructions included only for standards like AES.</p>
+<p>Supports very lightweight AES for microcontrollers. Instructions to help in 32bit and 64bit settings (RV32 and RV64). Dedicated sha2 instructions. Instructions to build TRNGs with a specified entropy source interface. Constant-time multiplication; const-time s-boxes.</p>
+<p>S-Boxes in hardware means that it doesn&rsquo;t have timing side-channels due to s-box look-ups.</p>
+<hr>
+<p><a href="https://www.synkhronix.com/about/"><strong>Stephan van Schaik</strong></a> and <a href="https://dblp.org/pid/176/8068.html"><strong>Andrew Kwong</strong></a> (Uni Michigan CS) / <em>CacheOut and SGAxe: How SGX Fails in Practice</em> <a href="https://youtu.be/kO-3Uh7tq60?t=1805">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/74/slides.pdf">slides</a></p>
+<p>Mandatory vulnerability catchy name: <a href="https://cacheoutattack.com/"><em>CacheOut</em></a></p>
+<p>Back in 2018 &hellip; meltdown and foreshadow based on leakage from CPU caches<br>
+2019 &hellip; Micro-architectural Data Sampling (MDS) attacks buffers in the CPU that surround the caches (<a href="https://mdsattacks.com/">MDS Attacks</a>)</p>
+<ul>
+<li>similar implications to meltdown</li>
+</ul>
+<p>Intel fixed this by adding a new instruction to flush the buffers. This fixes a symptom but not the underlying cause! Data can still be leaked. The attack is called CacheOut</p>
+<ul>
+<li>this can leak AES, RSA keys</li>
+</ul>
+<p>CacheOut demo: picture of MonaLisa loaded into secure enclave, then leaked out again. CacheOut breaches SGX confidentiality allowing an attacker to masquerade as a legitimate enclave when it isn&rsquo;t.</p>
+<p>Awesome demo on Twitter: &ldquo;<a href="https://twitter.com/SGAxe_AaaS">Attestation as a Service</a>&rdquo; &ndash; shows a Cacheout-targeted SGX made willing to atteset to anything tweeted at it!</p>
+<p>Case study: Signal, which uses SGX. Signal asked users to set PINs, to implement secure value recovery. THey wanted to be able to backup contacts to the cloud. Data has to be encrypted such that Signal themselves can&rsquo;t read it. This uses SGX enclave in order to rate limit any attempt to brute-force a 4-digit PIN.</p>
+<p>An attacker with access to Signal&rsquo;s servers can use the CacheOut attack. The threat model is such that this couldn&rsquo;t be done by a home user attacker; however a goverment agent who has subpoenaed Signal servers might be able to.</p>
+<hr>
+<p><a href="https://www.esat.kuleuven.be/cosic/people/lennert-wouters/"><strong>Lennert Wouters</strong></a> (COSIC) / <em>My other car is your car: compromising the Tesla Model X keyless entry system</em> / <a href="https://youtu.be/kO-3Uh7tq60?t=2696">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/55/slides.pdf">slides</a></p>
+<p>They use s/w &lsquo;Tesla Toolbox&rsquo; which isn&rsquo;t not meant to be publicly available but has been leaked on the internet.  They can persuade a Tesla Model X to unlock.</p>
+<p>(stopped taking notes, because this was too awesome not to focus on)</p>
+<p><a href="https://www.youtube.com/watch?v=clrNuBb3myE">Demo video</a></p>
+
+	</p>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/hadfieldp" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/phad" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		<li><a href="//linkedin.com/in/hadfieldp" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+		
+		
+		
+		<li><a href="//instagram.com/hadfieldp" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>© Paul Hadfield</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://phad.github.io/js/jquery.min.js"></script>
+<script src="https://phad.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://phad.github.io/js/skel.min.js"></script>
+<script src="https://phad.github.io/js/util.js"></script>
+
+<script src="https://phad.github.io/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

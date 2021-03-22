@@ -55,6 +55,8 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 			
 				<li><a href="https://phad.github.io/resume/">CV</a></li>
 			
+				<li><a href="https://phad.github.io/rwc2021/">RWC</a></li>
+			
 				<li><a href="https://phad.github.io/posts/">Blog</a></li>
 			
 			</ul>
@@ -67,14 +69,273 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 		<div id="main">
 			
     <h1 id="real-world-cryptography-2021">Real-World Cryptography 2021</h1>
-<p>Notes I took while virtually attending the 2021 RWC conference.</p>
+<p>Notes I took while virtually attending the 2021 Real World Cryptography Symposium.</p>
+<h1 id="introduction">Introduction</h1>
+<p>The <a href="https://rwc.iacr.org/">Real World Crypto</a> Symposium, part of <a href="https://iacr.org/">IACR</a>, was held online in 2021 due to the pandemic. It had been due to take place in Amsterdam, Holland - that will now be the venue for RWC2022.</p>
+<p>Normally the conference is held over three days.  This year, it was spread across four shorter days, enabling attendees from a wider range of timezones to attend remotely.</p>
+<p>As usual the programme is a mix of academic, industrial/commercial, government and public policy.  Quite a few talks are fairly accessible for someone who&rsquo;s taken Dan Boneh&rsquo;s <a href="https://crypto.stanford.edu/~dabo/courses/OnlineCrypto/">Crypto 101</a> course <a href="https://www.coursera.org/learn/crypto">coursera</a>.  But others are harder to follow.</p>
+<p>This year the pandemic inspired a new session with talks on Contact Tracing.  The other 12 sessions were largely the same as in previous years' conferences.</p>
+<h2 id="program">Program</h2>
+<p>The conference was broken down into themed sessions as follows. <a href="https://rwc.iacr.org/2021/program.php">RWC</a></p>
+<h3 id="monday-2021-jan-11">Monday, 2021-Jan-11.</h3>
+<p>Opening Remarks <a href="https://www.youtube.com/watch?v=TZMgRnSV3pk">video</a></p>
+<ol>
+<li><a href="2021-01-11_01/">Secure Channels</a></li>
+<li><a href="2021-01-11_02/">Group Messaging</a></li>
+<li><a href="2021-01-11_03/">Multi-Party Computation</a></li>
+</ol>
+<h3 id="tuesday-2021-jan-12">Tuesday, 2021-Jan-12.</h3>
+<ol start="4">
+<li><a href="2021-01-12_04a">Invited Talk</a> / <a href="2021-01-12_04">Signatures</a></li>
+<li><a href="2021-01-12_05">Humans, Policy, and Crypto</a></li>
+<li><a href="2021-01-12_06a">Invited Talk</a> / <a href="2021-01-12_06">Post-Quantum Cryptography</a></li>
+<li><a href="2021-01-12_07">Lightning Talks</a></li>
+</ol>
+<h3 id="wednesday-2021-jan-13">Wednesday, 2021-Jan-13.</h3>
+<ol start="8">
+<li><a href="2021-01-13_08a">Invited Talks</a> / <a href="2021-01-13_08">Contact Tracing</a></li>
+<li><a href="2021-01-13_09">Hardware</a></li>
+<li><a href="2021-01-13_10">Formal Analysis</a></li>
+</ol>
+<h3 id="thursday-2021-jan-14">Thursday, 2021-Jan-14.</h3>
+<ol start="11">
+<li><a href="2021-01-14_11a">Invited Talk</a> / <a href="2021-01-14_11">Cryptocurrency</a></li>
+<li><a href="2021-01-14_12">Crypto for the Cloud</a></li>
+<li><a href="2021-01-14_13a">Invited Talk</a> / <a href="2021-01-14_13">Anonymity</a></li>
+</ol>
 
 
     
     
         <span>
     <h1>
-        <a href="https://phad.github.io/rwc2021/2021-01-12/">Tuesday at Real World Crypto 2021</a>
+        <a href="https://phad.github.io/rwc2021/2021-01-14_13/">Real World Crypto 2021 - Session 13: Anonymity</a>
+    </h1>
+
+    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-14 18:00:00 &#43;0000 UTC">2021-01-14</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+</span>
+
+<p>Prev | Up
+Session video
+ Subodh Iyengar (Facebook) / PrivateStats: Anonymous Authenticated Logging at Scale / homepage video slides
+FB use a lot of client-side telemetry from their apps. They want to log data without associating it to the user. This is private logging.
+If it&rsquo;s aggregate data, then there&rsquo;s no need to identify users. But if it isn&rsquo;t, there are problems; how can they trust the log data with no user ID?</p>
+<hr>
+
+    
+        <span>
+    <h1>
+        <a href="https://phad.github.io/rwc2021/2021-01-14_12/">Real World Crypto 2021 - Session 12: Crypto for the Cloud</a>
+    </h1>
+
+    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-14 14:00:00 &#43;0000 UTC">2021-01-14</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+</span>
+
+<p>Prev | Up | Next
+Session video
+ Kenny Patterson (ETH Zurich) / SWiSSSE: System-Wide Security for Searchable Symmetric Encryption / paper video slides
+There&rsquo;s a github repo
+Searchable Encryption: how do you permit keyword searching over a corpus of encrypted documents?
+Symmetric: they&rsquo;re only allowing use of symmetric techniques, for efficiency.
+Server might have a search index, a keyvalue store, where PRF(search keyword)-&gt;Enc(matching doc ids). All value entries have same size to avoid attacks like freq analysis, so all doc id lists are padded to max size.</p>
+<hr>
+
+    
+        <span>
+    <h1>
+        <a href="https://phad.github.io/rwc2021/2021-01-14_13a/">Real World Crypto 2021 - Session 13: Invited Talk</a>
+    </h1>
+
+    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-14 14:00:00 &#43;0000 UTC">2021-01-14</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+</span>
+
+<p>Prev | Up | Next
+Anna Lysyanskaya (Brown Uni) / Privacy-Preserving Authentication &ndash; From Theory to Practice video
+What makes &lsquo;you&rsquo;, you?
+ offline - I think, therefore I am (after Descartes) online - I login, therefore I am  Nowadays, this is embodied by cloud providers - you log-in to them, they do the rest
+But here&rsquo;s an alternative: &ldquo;Self-sovereign Identity&rdquo;
+ no-one can act on your behalf - your crypto PK is needed for that you can make assertions on your identity without needy cloudy help no-one else controls your data  The term was introduced in The path to self-soverereign identity</p>
+<hr>
+
+    
+        <span>
+    <h1>
+        <a href="https://phad.github.io/rwc2021/2021-01-14_11/">Real World Crypto 2021 - Session 11: Cryptocurrency</a>
+    </h1>
+
+    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-14 12:00:00 &#43;0000 UTC">2021-01-14</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+</span>
+
+<p>Prev | Up | Next
+Session video
+ Omer Schlomovits (ZenGo) / Attacking Threshold Wallets / video slides
+Threshold wallets are based on Threshold Signing, an application of MPC. In threshold signing:
+ a signing key split into &lsquo;n&rsquo; shares. Threshold t &lt; n. t+1 shares is enough to make a signature, but &lt;=t shares is useless.  Attack 1: &ldquo;Forget and Forgive&rdquo;
+ vulnerability in &lsquo;secret re-sharing protocol&rsquo; committee who hold key shares, during a sk update &amp; reshare, have to verify the share they receive.</p>
+<hr>
+
+    
+        <span>
+    <h1>
+        <a href="https://phad.github.io/rwc2021/2021-01-14_11a/">Real World Crypto 2021 - Session 11: Invited Talk</a>
+    </h1>
+
+    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-14 10:00:00 &#43;0000 UTC">2021-01-14</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+</span>
+
+<p>Prev | Up | Next
+Eli Ben Sasson (StarkWare) / Scaling Computations on Blockchains with ZK-STARKs / paper video slides
+Plug for a language called Cairo cairo-lang.org. There&rsquo;s a playground too.
+zkp.science &ndash; a list of resources about zero-knowledge proofs.
+His Pitch: &ldquo;Blockchains == Inclusive Accountability&rdquo; but sacrifice privacy and scalability. ZK-STARKs solve both problems, because anyone can download chain and verify.
+SNARK = Succinct, Non-Interactive ARgument of Knowledge
+STARK = Scaleable, Transparency ARgument of Knowledge</p>
+<hr>
+
+    
+        <span>
+    <h1>
+        <a href="https://phad.github.io/rwc2021/2021-01-13_10/">Real World Crypto 2021 - Session 10: Formal Analysis</a>
+    </h1>
+
+    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-13 20:00:00 &#43;0000 UTC">2021-01-13</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+</span>
+
+<p>Prev | Up | Next
+Session video
+ Kevin Liao (MIT) / SoK: Computer-Aided Cryptography / paper video
+HACLxN - verified generic SIMD crypto: used to prove functional correctness for OpenSSL
+Formal models != real world: design-level security, functional correctness, implementation-level security all differ, due to simplicfications, unaccounted side-channels, difference between what was verified and final machine code&hellip;
+Computer-aided crypto aims to close those gaps.
+ Nadim Kobeissi (NGIzero/nlnet) / Verifpal: Cryptographic Protocol Analysis for the Real World / verifpal.</p>
+<hr>
+
+    
+        <span>
+    <h1>
+        <a href="https://phad.github.io/rwc2021/2021-01-13_09/">Real World Crypto 2021 - Session 9: Hardware</a>
+    </h1>
+
+    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-13 16:00:00 &#43;0000 UTC">2021-01-13</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+</span>
+
+<p>Prev | Up | Next
+Session video
+ Madura Shelton and Yuval Yarom (Uni Adelaide) / Rosita: Towards Automatic Elimination of Power-Analysis / paper video repo
+Side-channel attacks first mooted in 1996 (Kocher)
+Masking values ought to work in theory, but in reality CPUs pipeline, and values from the crypto calculation can be displaced from registers by masked ones, and so get leaked
+Current practice: write s/w , run on a device, coupled up to equipement that e.</p>
+<hr>
+
+    
+        <span>
+    <h1>
+        <a href="https://phad.github.io/rwc2021/2021-01-13_08/">Real World Crypto 2021 - Session 8: Contact Tracing</a>
+    </h1>
+
+    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-13 12:00:00 &#43;0000 UTC">2021-01-13</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+</span>
+
+<p>Prev | Up | Next
+Session video
+ Rosario Gennaro (City College NYC/Prep4All) / Exposure Notification System May Allow for Large-Scale Voter Suppression video
+In the USA contact-tracing apps left to individual states due to fed govt lack of interest. All who launched use the GAEN (Google &amp; Apple) framework but only 17 states have apps! Adoption very low (&lt;10%) compared with Europe (&gt;20-30%)
+Comparisons made with Prep4All (advocates for PrEP therapy for HIV avoidance).</p>
+<hr>
+
+    
+        <span>
+    <h1>
+        <a href="https://phad.github.io/rwc2021/2021-01-13_08a/">Real World Crypto 2021 - Session 8: Invited Talks</a>
+    </h1>
+
+    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-13 11:00:00 &#43;0000 UTC">2021-01-13</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+</span>
+
+<p>Prev | Up | Next
+Carmela Troncoso (EPFL) / Privacy by Design &ndash; From Theory to Practice in the Context of COVID-19 Contact Tracing video slides
+Discussion of security &amp; privacy concerns of contact-tracing apps
+They were built under time pressure yet had to be robust, reliable and scalable
+Had to keep scope simple, avoiding too much new tech, and using existing infra where possible
+She worked with group to specify Decentralized Privacy-Preserving Proximity Tracing</p>
+<hr>
+
+    
+        <span>
+    <h1>
+        <a href="https://phad.github.io/rwc2021/2021-01-12_07/">Real World Crypto 2021 - Session 7: Lightning Talks</a>
     </h1>
 
     <i class="fa fa-calendar"></i>&nbsp;&nbsp;
@@ -88,32 +349,25 @@ Free for personal and commercial use under the CCA 3.0 license (html5up.net/lice
 
 </span>
 
-<p>More stuff </p>
-<hr>
-
-    
-        <span>
-    <h1>
-        <a href="https://phad.github.io/rwc2021/2021-01-11/">First day of Real World Crypto 2021 - Monday</a>
-    </h1>
-
-    <i class="fa fa-calendar"></i>&nbsp;&nbsp;
-<time datetime="2021-01-11 20:00:00 &#43;0000 UTC">2021-01-11</time>&nbsp;&nbsp;
-
-
-
-
-
-
-
-</span>
-
-<p>stuff </p>
+<p>Prev | Up | Next
+Session video
+ Douglas Stebila - CHESS2021 &ldquo;R for Artifacts&rdquo; - a more practical conference than RWC, and requires software artifacts for all submissions!
+ Filippo Valsorda - age-keygen - a file encryption tool / format / library, intended to replace GPG for encryption of files, backups, etc. In Go, Rust version also available. White paper for this co-written with Ben Cartwright-Cox (lately of Monzo!)</p>
 <hr>
 
     
 
     
+    
+
+    
+
+    
+        <a class="button" rel="next" href="https://phad.github.io//rwc2021/page/2/">
+            Older »
+        </a>
+    
+
 
 
 		</div>

@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Real World Crypto 2021 - Session 1: Secure Channels &middot; Paul&#39;s 20% Time</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Paul Hadfield&#39;s 20% Time">
+		<meta name="description" content="Paul Hadfield is a software engineer, musician and tinkerer in London UK">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Paul&#39;s 20% Time">
+		<meta name="og:title" content="Real World Crypto 2021 - Session 1: Secure Channels">
+		<meta name="og:url" content="https://phad.github.io/rwc2021/2021-01-11_01/">
+		
+		<meta name="og:image" content="https://phad.github.io/images/phad-duck-256.png">
+		
+		
+
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		<!--[if lte IE 8]><script src='https://phad.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://phad.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://phad.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://phad.github.io/" class="image avatar"><img src="https://phad.github.io/images/phad-duck-256.png" alt="" /></a>
+	
+	
+		<h1>What I get up to when I&rsquo;m on my non-working days.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://phad.github.io/">Home</a></li>
+			
+				<li><a href="https://phad.github.io/resume/">CV</a></li>
+			
+				<li><a href="https://phad.github.io/rwc2021/">RWC</a></li>
+			
+				<li><a href="https://phad.github.io/posts/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Real World Crypto 2021 - Session 1: Secure Channels</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-11 12:00:00 &#43;0000 UTC">2021-01-11</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+	</span>
+
+	<p>
+	    <p><a href="..">Up</a> | <a href="../2021-01-11_02">Next</a></p>
+<p>Session <a href="https://www.youtube.com/watch?v=TZMgRnSV3pk&amp;t=575s">video</a></p>
+<hr>
+<p><a href="https://www.felixguenther.info/"><strong>Felix Guenther</strong></a> (KU Zurich) / <em>Robust Channels: Handling Unreliable Networks in the Record Layers of QUIC and DTLS 1.3</em> <a href="http://ia.cr/2020/718">paper</a> <a href="https://youtu.be/TZMgRnSV3pk?t=632">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/58/slides.pdf">slides</a></p>
+<p>(no notes taken)</p>
+<hr>
+<p><a href="https://twitter.com/ic0nz1"><strong>Robert Merget</strong></a> (Ruhr Uni, Bochum) / <em>Raccoon Attack: Finding and Exploiting Most-Significant-Bit-Oracles in TLS-DH(E)</em> <a href="">paper</a> <a href="https://youtu.be/TZMgRnSV3pk?t=1418">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/11/slides.pdf">slides</a></p>
+<p>Raccoon attack talk interesting. Moral of story is, don&rsquo;t strip leading zero bytes as it can lead to timing side-channel attacks based on the runtimes of hash functions.</p>
+<p>Like all TLS vulnerabilities it has its own website: <a href="https://raccoon-attack.com">raccoon-attack.com</a></p>
+<p>There&rsquo;s a scanning tool you may use to determine if your site is vulnerable: <a href="https://github.com/tls-attacker/TLS-Scanner">TLS-Scanner</a>.</p>
+<hr>
+<p><a href="https://www.cs.cornell.edu/~jlen/"><strong>Julia Len</strong></a> (Cornell) / <em>Partitioning Oracle Attacks</em> <a href="http://eprint.iacr.org/2020/1491.pdf">paper</a> <a href="https://youtu.be/TZMgRnSV3pk?t=2321">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/52/slides.pdf">slides</a></p>
+<p>Several possible Partitioning Oracles mentioned in talk about discovering AEAD keys: one is JOSE. Partitioning attack is possible if non-committing AEAD is used. It isn&rsquo;t if &lsquo;committing AEAD&rsquo; is used, however no standardized non-committing scheme exists yet.</p>
+<hr>
+<p><a href="https://thomwiggers.nl/"><strong>Thom Wiggers</strong></a> (Radboud Uni) / *PQ-TLS without handshake signatures *<a href="http://ia.cr/2020/534">paper</a> <a href="https://youtu.be/TZMgRnSV3pk?t=3178">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/68/slides.pdf">slides</a></p>
+<p>Experimentation was done with Cloudflare who have extended the Go standard library TLS implementation - <a href="https://github.com/cloudflare/go/tree/cf-pq-kemtls">KEMTLS branch of cloudflare/go</a></p>
+<hr>
+<h2 id="levchin-prize-winners">Levchin Prize Winners</h2>
+<p>The <a href="https://rwc.iacr.org/LevchinPrize/#about">Levchin Prize</a> (funded by Max Levchin) is awarded every year at RWC to honour significant contributions to cryptography.  Usually one is awarded to recognize a past achievement and the other one to a team responsible for something more current.</p>
+<p><a href="https://www.youtube.com/watch?v=lgsaMMloOF4">video</a></p>
+<ol>
+<li><a href="https://en.wikipedia.org/wiki/Victor_S._Miller"><strong>Victor Miller</strong></a> and <a href="https://en.wikipedia.org/wiki/Neal_Koblitz"><strong>Neal Koblitz</strong></a> for the invention of Elliptic-Curve Cryptography</li>
+<li>The <a href="https://www.torproject.org/">TOR project</a> represented by <a href="https://en.wikipedia.org/wiki/Roger_Dingledine"><strong>Roger Dingledine</strong></a></li>
+</ol>
+
+	</p>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/hadfieldp" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/phad" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		<li><a href="//linkedin.com/in/hadfieldp" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+		
+		
+		
+		<li><a href="//instagram.com/hadfieldp" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>© Paul Hadfield</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://phad.github.io/js/jquery.min.js"></script>
+<script src="https://phad.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://phad.github.io/js/skel.min.js"></script>
+<script src="https://phad.github.io/js/util.js"></script>
+
+<script src="https://phad.github.io/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

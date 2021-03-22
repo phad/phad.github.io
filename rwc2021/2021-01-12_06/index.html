@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Real World Crypto 2021 - Session 6: Post-Quantum Cryptography &middot; Paul&#39;s 20% Time</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Paul Hadfield&#39;s 20% Time">
+		<meta name="description" content="Paul Hadfield is a software engineer, musician and tinkerer in London UK">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Paul&#39;s 20% Time">
+		<meta name="og:title" content="Real World Crypto 2021 - Session 6: Post-Quantum Cryptography">
+		<meta name="og:url" content="https://phad.github.io/rwc2021/2021-01-12_06/">
+		
+		<meta name="og:image" content="https://phad.github.io/images/phad-duck-256.png">
+		
+		
+
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		<!--[if lte IE 8]><script src='https://phad.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://phad.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://phad.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://phad.github.io/" class="image avatar"><img src="https://phad.github.io/images/phad-duck-256.png" alt="" /></a>
+	
+	
+		<h1>What I get up to when I&rsquo;m on my non-working days.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://phad.github.io/">Home</a></li>
+			
+				<li><a href="https://phad.github.io/resume/">CV</a></li>
+			
+				<li><a href="https://phad.github.io/rwc2021/">RWC</a></li>
+			
+				<li><a href="https://phad.github.io/posts/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Real World Crypto 2021 - Session 6: Post-Quantum Cryptography</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-12 16:00:00 &#43;0000 UTC">2021-01-12</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+	</span>
+
+	<p>
+	    <p><a href="../2021-01-12_06a">Prev</a> | <a href="..">Up</a> | <a href="../2021-01-12_07">Next</a></p>
+<p>Session <a href="https://youtu.be/X0Y6D5zLI-Y?t=1760">video</a></p>
+<hr>
+<p><a href="https://www.nist.gov/people/daniel-apon"><strong>Daniel Apon</strong></a> (NIST) / <a href="https://pqshield.com/team/dr-james-howe/"><strong>James Howe</strong></a> (PQShield) / <em>Attacks on NIST PQC 3rd Round Candidates</em> / <a href="">paper</a> <a href="https://youtu.be/X0Y6D5zLI-Y?t=1781">video</a> / <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/22/slides.pdf">slides</a></p>
+<p>The full study attempted all of:</p>
+<ul>
+<li>classical cryptanalysis</li>
+<li>static timing analysis</li>
+<li>fault attacks (try to drive the algorithm into revealing internal details by pushing it into a fault state)</li>
+<li>simple power attacks</li>
+<li>advanced (differential/correlation) power analysis</li>
+<li>electromagnetic attacks</li>
+<li>template attacks</li>
+<li>cold-boot attacks</li>
+<li>whether countermeasures exist</li>
+</ul>
+<p>For lattice-based approaches, do any of the attacks enable lattice reduction to be made possible/easier?</p>
+<p>Some finalists in the 3rd round are so similar that success will probably depend on their resistance to particular side-channels.</p>
+<p>There&rsquo;s a <a href="https://eprint.iacr.org/2020/971">&lsquo;QuantumHammer&rsquo;</a> attack which sounds cool.</p>
+<p>They expect implementation complexity to be considerably greater than non-PQ algorithms which will make weaknesses more likely to occur. Some algos will just not be small/light enough for small devices such as smartcards.</p>
+<p>Another call for businesses to start considering their transition to PQC and consider the possible impact of the types of attacks being studied.</p>
+<hr>
+<p><a href="http://cseweb.ucsd.edu/~h3davis/authors/admin/"><strong>Hannah Davis</strong></a> (UCSD) / <em>Separate Your Domains: NIST PQC KEMs and Pitfalls in Implementing Random Oracles</em> / <a href="https://eprint.iacr.org/2020/241.pdf">paper</a> <a href="https://youtu.be/X0Y6D5zLI-Y?t=2686">video</a></p>
+<p>KEM = Key Encapsulation Mechanism</p>
+<p>One KEM algo, &lsquo;DAGS&rsquo;, leaked half of its session key into ciphertext! Half the key bits were directly present in the c/t. DAGS didn&rsquo;t pass round 1, but this particular attack was not the reason, and was not spotted</p>
+<p>This was a common mistake on behalf of developers: An algo calls for 3 &ndash;distinct&ndash; hash functions H1, H2, H3 &ndash; but the developer set all three to be SHA3. Then, their outputs were correlated and so not independent as required.</p>
+<p>This gives rise to a problem called &lsquo;Oracle Cloning&rsquo; It&rsquo;s reasonable to only want to use a single hash function, but you want to use it to derive three hash functions that are indeed independent of each other. That can be done by domain separation, where Hi(X) = H(i || X), and separate &lsquo;i&rsquo; for each. It&rsquo;s enough for i to be a single byte.</p>
+<p>They analysed the various NIST KEMs to identify the different ways that designers end up oracle cloning. They classified the various methods, to define safe ways of oracle cloning.</p>
+<p>When finalized PQC algos are standardized, there&rsquo;s the likelihood of lots of impls in different crypto libraries, and if inexperienced devs do that then guidance on safe ways to do oracle cloning is important.</p>
+<p>Toolbox of good oracle cloning methods:</p>
+<ul>
+<li>Output splitting - take non-overlapping bit ranges from the parent H for H1, H2, H3</li>
+<li>Prefix with domain separators - as shown above</li>
+<li>Identity/Length separation - <em>do</em> use the same H func for H1,2,3 but ensure it is never called on identical input</li>
+</ul>
+<hr>
+<p><a href="http://www.joppebos.com/"><strong>Joppe Bos</strong></a> (NXP) / <em>Post-Quantum Crypto: The Embedded Challenge</em> / <a href="https://youtu.be/X0Y6D5zLI-Y?t=3561">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/19/slides.pdf">slides</a></p>
+<p>You must prepare yourself for coming PQC standards, whether you happen to believe that Quantum Computers will be a thing or not.</p>
+<p>There are <em>many</em> embedded devices:</p>
+<ul>
+<li>70% cars will be connected by &lsquo;25</li>
+<li>6B IoT units in 2021, 12B expected 2025</li>
+<li>60B mobile devices by 2025</li>
+</ul>
+<p>Use cases:</p>
+<ul>
+<li>Digital Sigs for industrial and IoT applications
+<ul>
+<li>it&rsquo;d be a good idea for these to be Q-resistant for secure boot</li>
+<li>for automative it&rsquo;d be good for OTA updates to be Q-resistant</li>
+</ul>
+</li>
+<li>Key Exchange - for Industrial / IoT - the &ldquo;secure element&rdquo; better be Q-resistant</li>
+</ul>
+<p>He studied performance of various lattice algs on Cortex M4 and found it largely as fast as X25519 classical. However : memory usage much higher (ca 20kB vs 1or2kB for 25519); also key sizes much higher. This is problematic for embedded devices, where needing &gt;4kB stack can present challenges</p>
+<p>How can industry prepare?</p>
+<ul>
+<li>move to stateful-hash signature schemes - can be done now</li>
+<li>track NIST&rsquo;s standardization for KEM and digital signatures - in the longer term</li>
+</ul>
+
+	</p>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/hadfieldp" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/phad" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		<li><a href="//linkedin.com/in/hadfieldp" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+		
+		
+		
+		<li><a href="//instagram.com/hadfieldp" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>© Paul Hadfield</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://phad.github.io/js/jquery.min.js"></script>
+<script src="https://phad.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://phad.github.io/js/skel.min.js"></script>
+<script src="https://phad.github.io/js/util.js"></script>
+
+<script src="https://phad.github.io/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

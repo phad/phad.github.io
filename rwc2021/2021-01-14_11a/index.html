@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Real World Crypto 2021 - Session 11: Invited Talk &middot; Paul&#39;s 20% Time</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Paul Hadfield&#39;s 20% Time">
+		<meta name="description" content="Paul Hadfield is a software engineer, musician and tinkerer in London UK">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Paul&#39;s 20% Time">
+		<meta name="og:title" content="Real World Crypto 2021 - Session 11: Invited Talk">
+		<meta name="og:url" content="https://phad.github.io/rwc2021/2021-01-14_11a/">
+		
+		<meta name="og:image" content="https://phad.github.io/images/phad-duck-256.png">
+		
+		
+
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		<!--[if lte IE 8]><script src='https://phad.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://phad.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://phad.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://phad.github.io/" class="image avatar"><img src="https://phad.github.io/images/phad-duck-256.png" alt="" /></a>
+	
+	
+		<h1>What I get up to when I&rsquo;m on my non-working days.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://phad.github.io/">Home</a></li>
+			
+				<li><a href="https://phad.github.io/resume/">CV</a></li>
+			
+				<li><a href="https://phad.github.io/rwc2021/">RWC</a></li>
+			
+				<li><a href="https://phad.github.io/posts/">Blog</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Real World Crypto 2021 - Session 11: Invited Talk</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-14 10:00:00 &#43;0000 UTC">2021-01-14</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+	</span>
+
+	<p>
+	    <p><a href="../2021-01-13_10">Prev</a> | <a href="..">Up</a> | <a href="../2021-01-14_11">Next</a></p>
+<p><a href="https://starkware.co/team/eli-ben-sasson-2/"><strong>Eli Ben Sasson</strong></a> (StarkWare) / <em>Scaling Computations on Blockchains with ZK-STARKs</em> / <a href="http://ia.cr/2018/046">paper</a> <a href="https://www.youtube.com/watch?v=8vduDYBu8uQ">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/1005/slides.pdf">slides</a></p>
+<p>Plug for a language called <a href="https://starkware.co/cairo/">Cairo</a> <a href="https://www.cairo-lang.org/">cairo-lang.org</a>.  There&rsquo;s a <a href="http://cairo-lang.org/playground">playground</a> too.</p>
+<p><a href="http://zkp.science/">zkp.science</a> &ndash; a list of resources about zero-knowledge proofs.</p>
+<p>His Pitch: &ldquo;Blockchains == Inclusive Accountability&rdquo; but sacrifice privacy and scalability.  <em>ZK-STARKs</em> solve both problems, because anyone can download chain and verify.</p>
+<p>SNARK = Succinct, Non-Interactive ARgument of Knowledge<br>
+STARK = Scaleable, Transparency ARgument of Knowledge</p>
+<p>Solving for scaleability</p>
+<ul>
+<li>ZKPs go back to 1985. Explosion of implementations since.</li>
+<li>see blog post <a href="https://nakamoto.com/cambrian-explosion-of-crypto-proofs/"><em>A Cambrian explosion of ZKPs</em></a></li>
+<li>STARKs vs SNARKs</li>
+</ul>
+<p>ZK-STARKs: they can solve scale and privacy - in theory, and in practice!</p>
+<ul>
+<li>but how to make them accessible to all?</li>
+</ul>
+<p>Why can&rsquo;t blockchains meet the txns/per sec that VISA et al can?  He claims: VISA run big iron that can do 10,000s txns/sec, but your laptop can&rsquo;t.</p>
+<p>ZK proof recap:</p>
+<ul>
+<li>privacy is from ZK: the prover&rsquo;s private inputs are shielded</li>
+<li>scalability is from Prover running in linear time, and generating a proof that is exponentially smaller than the amount of data the prover had to process. The verifier has exponentially small (&lsquo;poly-log&rsquo;) running time</li>
+</ul>
+<p>On a blockchain: verifiers only need to see a Merkle root hash of all txns, they see prev root and proposed new root, and a proof, and this can be executed v quickly. The prover only has to see all the individual txns.</p>
+<p>Transparency is the T in ZK-STARK. []&ldquo;arthur - merlin protocol&rdquo;](<a href="https://en.wikipedia.org/wiki/Arthur%E2%80%93Merlin_protocol">https://en.wikipedia.org/wiki/Arthur%E2%80%93Merlin_protocol</a>)</p>
+<p>SNARK - S = succinct; N = Non-Interactive (set-up may require huge computation time and must be highly trusted. (remember <a href="https://spectrum.ieee.org/tech-talk/computing/networks/the-crazy-security-behind-the-birth-of-zcash">zcash genesis</a>?) He calls the need for these properties &lsquo;toxic&rsquo; and claims that ZK-STARK is &lsquo;non-toxic&rsquo;.</p>
+<p>Cairo: MVL (minimal viable language) for production STARK systems</p>
+<p>If you write using Cairo code, then you get a ZKP verifier for free as part of Cairo.<br>
+This has been launched on the Ethereum test net.</p>
+
+	</p>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/hadfieldp" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/phad" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		<li><a href="//linkedin.com/in/hadfieldp" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+		
+		
+		
+		<li><a href="//instagram.com/hadfieldp" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>© Paul Hadfield</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://phad.github.io/js/jquery.min.js"></script>
+<script src="https://phad.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://phad.github.io/js/skel.min.js"></script>
+<script src="https://phad.github.io/js/util.js"></script>
+
+<script src="https://phad.github.io/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>
