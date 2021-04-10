@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Real World Crypto 2021 - Session 11: Cryptocurrency &middot; Paul&#39;s 20% Time</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Paul Hadfield&#39;s 20% Time">
+		<meta name="description" content="Paul Hadfield is a software engineer, musician and tinkerer in London UK">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Paul&#39;s 20% Time">
+		<meta name="og:title" content="Real World Crypto 2021 - Session 11: Cryptocurrency">
+		<meta name="og:url" content="https://phad.github.io/rwc2021/11/">
+		
+		<meta name="og:image" content="https://phad.github.io/images/phad-duck-256.png">
+		
+		
+
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		<!--[if lte IE 8]><script src='https://phad.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://phad.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://phad.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://phad.github.io/" class="image avatar"><img src="https://phad.github.io/images/phad-duck-256.png" alt="" /></a>
+	
+	
+		<h1>What I get up to when I&rsquo;m on my non-working days.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://phad.github.io/">Home</a></li>
+			
+				<li><a href="https://phad.github.io/resume/">CV</a></li>
+			
+				<li><a href="https://phad.github.io/rwc2021/">RWC</a></li>
+			
+				<li><a href="https://phad.github.io/posts/">Blog</a></li>
+			
+				<li><a href="https://phad.github.io/tags/">Tags</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Real World Crypto 2021 - Session 11: Cryptocurrency</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-14 00:00:00 &#43;0000 UTC">2021-01-14</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+	</span>
+
+	<p>
+	    <p><a href="../2021-01-14_11a">Prev</a> | <a href="..">Up</a> | <a href="../2021-01-14_12">Next</a></p>
+<p>Session <a href="https://www.youtube.com/watch?v=3JeYu2xoVtE">video</a></p>
+<hr>
+<p><a href="https://cyber.biu.ac.il/member/omer-shlomovits/"><strong>Omer Schlomovits</strong></a> (ZenGo) / <em>Attacking Threshold Wallets</em> / <a href="https://youtu.be/3JeYu2xoVtE?t=77">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/31/slides.pdf">slides</a></p>
+<p>Threshold wallets are based on Threshold Signing, an application of MPC.   In threshold signing:</p>
+<ul>
+<li>a signing key split into &lsquo;n&rsquo; shares.</li>
+<li>Threshold t &lt; n.</li>
+<li>t+1 shares is enough to make a signature, but &lt;=t shares is useless.</li>
+</ul>
+<p>Attack 1: &ldquo;Forget and Forgive&rdquo;</p>
+<ul>
+<li>vulnerability in &lsquo;secret re-sharing protocol&rsquo;</li>
+<li>committee who hold key shares, during a sk update &amp; reshare, have to verify the share they receive. If valid, they overwrite their old share</li>
+<li>attack based on sending valid shares to a subset of the committee, and invalid shares to the rest</li>
+<li>applications: forever lock some money; cause money to be lost; extort money.</li>
+<li>fix is to require a final ACK round so that everyone only updates their share if everyone previous reported that validation succeeded.</li>
+</ul>
+<p>Attack 2:&quot; Golden Shoe&quot;</p>
+<ul>
+<li>This was a bit too mathematical for me to capture!</li>
+</ul>
+<hr>
+<p><a href="https://iohk.io/en/team/christian-badertscher"><strong>Christian Badertscher</strong></a>/<a href="https://iohk.io/en/team/philipp-kant"><strong>Philipp Kant</strong></a> (IOHK/Cardano) / <em>From Crypto-Paper to Crypto-Currency: the Cardano Consensus Layer</em> / <a href="https://youtu.be/3JeYu2xoVtE?t=1116">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/79/slides.pdf">slides</a></p>
+<p>IOHK have a <a href="https://iohk.io/en/">rather pretty website</a> involving interactive fractal graphics!</p>
+<p>At the heart of Cardano is Ouroboros, the algorithm that underpins the Ada cryptocurrency.</p>
+<p>Protocol execution model for distributed computation over a network:</p>
+<ul>
+<li>interactive machines</li>
+<li>formalizations of assumed resources e.g. network, clock, random oracle,</li>
+<li>byzantine behaviour (under attack)</li>
+<li>rational behaviour (people have good reasons to want to use honestly)</li>
+<li>machine failures</li>
+</ul>
+<p>If your security model has captured all properties then security proofs should be meaningful in practice.</p>
+<p>?? Ouroboros: Nakamoto-style proof-of-stake blockchain protocol realizing a ledger<br>
+(since 2017) Has gone through 6 iterations of improvement, switching between experiences gained in implementation, and returning to theory to address findings</p>
+<p>?? Property-based testing. Once properties are described, random inputs generated, and test that desired properties still hold. If they don&rsquo;t you drill down through the inputs until you isolate the problem with some specific inputs</p>
+<p>Risk of system collapse or takeover when transitioning from a small scale test sytem to a much more decentralised one! Need to do this gradually.</p>
+<hr>
+<p><a href="https://www.bmdavid.com/"><strong>Bernardo David</strong></a> (ITU Copenhagen) / <em>Alice in Randomland: How to Build and Use Distributed Randomness Beacons</em> / <a href="">paper</a> <a href="https://youtu.be/3JeYu2xoVtE?t=2201">video</a></p>
+<p>What is a randomness beacon?</p>
+<ul>
+<li>decentralixed setting: can&rsquo;t trust a central authority to generate randomness</li>
+<li>so rnd beacon protocols , which are unpredictable and unbiasable, help parties generate random outputs.</li>
+<li>they must be publicly verifiable so anyone can check for correct functioning,</li>
+<li>and must have guarnateed outputs as other systems depend on them</li>
+</ul>
+<p>What are their important parameters?</p>
+<ul>
+<li>does protocol require any setup, like a zk-snark does?</li>
+<li>how do we know how random the outputs can be, what bias may exist?</li>
+<li>how complex? what security guarantees</li>
+</ul>
+<p>Construction 1: Publicly Verifiable Sercret Sharing (PVSS)</p>
+<ul>
+<li>depends on a PKI. outputs uniform randomness. ex. ALBATRROSS</li>
+<li>However: quadratic complexity</li>
+<li>Used in Cardano first version for Ouroboros</li>
+</ul>
+<p>Construction 2: Verifiable Random Function</p>
+<ul>
+<li>also depends on a PKI. output randomness can be biased by adversary</li>
+<li>advantage; O[n] complexity. its good to incude on a blockchain</li>
+<li>Used in secret leader election in proof-of-stake protocols</li>
+<li>Used in AlgoRand and current Cardano</li>
+</ul>
+<p>Construction 3: Threshold VRFs</p>
+<ul>
+<li>complex setup, requires distributed key generation.</li>
+<li>output randomness is uniform pseudorand</li>
+<li>O[n] complexity. However: as pseudo random eventually will repeat so needs seed to be refreshed occasionally</li>
+<li>Used in: GLOW, DRAND</li>
+</ul>
+<p>Construction 4: Time-based primitives</p>
+<ul>
+<li>e.g. time-lock puzzles, verifiable delay functions</li>
+<li>Setup: elaborate setup which could be attacked</li>
+<li>output randomness is uniform; compliexity is O[n] for comms but computational depends on network.</li>
+<li>This isn&rsquo;t yet well-understood!</li>
+<li>Use in: any app that needs randomness, e.g. VDF Alliance (Etherium)</li>
+</ul>
+<p>These could be combined, e.g. using C1 to reseed C3</p>
+
+	</p>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/hadfieldp" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/phad" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		<li><a href="//linkedin.com/in/hadfieldp" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+		
+		
+		
+		<li><a href="//instagram.com/hadfieldp" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>© Paul Hadfield</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://phad.github.io/js/jquery.min.js"></script>
+<script src="https://phad.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://phad.github.io/js/skel.min.js"></script>
+<script src="https://phad.github.io/js/util.js"></script>
+
+<script src="https://phad.github.io/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

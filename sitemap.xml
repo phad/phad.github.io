@@ -4,17 +4,37 @@
   
   <url>
     <loc>https://phad.github.io/posts/</loc>
-    <lastmod>2021-03-21T20:00:00+00:00</lastmod>
+    <lastmod>2021-04-10T11:37:35+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://phad.github.io/posts/2021-03-22/</loc>
-    <lastmod>2021-03-21T20:00:00+00:00</lastmod>
+    <loc>https://phad.github.io/tags/brewing/</loc>
+    <lastmod>2021-04-10T11:37:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://phad.github.io/tags/lockdown/</loc>
+    <lastmod>2021-04-10T11:37:35+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://phad.github.io/</loc>
+    <lastmod>2021-04-10T11:37:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://phad.github.io/posts/lockeddownandbitteresb/</loc>
+    <lastmod>2021-04-10T11:37:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://phad.github.io/tags/</loc>
+    <lastmod>2021-04-10T11:37:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://phad.github.io/posts/2021-03-22/</loc>
     <lastmod>2021-03-21T20:00:00+00:00</lastmod>
   </url>
   
@@ -25,93 +45,93 @@
   </url>
   
   <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-14_13/</loc>
-    <lastmod>2021-01-14T18:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-14_12/</loc>
-    <lastmod>2021-01-14T14:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-14_13a/</loc>
-    <lastmod>2021-01-14T14:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-14_11/</loc>
+    <loc>https://phad.github.io/rwc2021/11/</loc>
     <lastmod>2021-01-14T12:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-14_11a/</loc>
+    <loc>https://phad.github.io/rwc2021/11a/</loc>
     <lastmod>2021-01-14T10:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-13_10/</loc>
+    <loc>https://phad.github.io/rwc2021/12/</loc>
+    <lastmod>2021-01-14T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://phad.github.io/rwc2021/13/</loc>
+    <lastmod>2021-01-14T18:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://phad.github.io/rwc2021/13a/</loc>
+    <lastmod>2021-01-14T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://phad.github.io/rwc2021/10/</loc>
     <lastmod>2021-01-13T20:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-13_09/</loc>
-    <lastmod>2021-01-13T16:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-13_08/</loc>
+    <loc>https://phad.github.io/rwc2021/08/</loc>
     <lastmod>2021-01-13T12:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-13_08a/</loc>
+    <loc>https://phad.github.io/rwc2021/08a/</loc>
     <lastmod>2021-01-13T11:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-12_07/</loc>
-    <lastmod>2021-01-12T20:00:00+00:00</lastmod>
+    <loc>https://phad.github.io/rwc2021/09/</loc>
+    <lastmod>2021-01-13T16:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-12_06/</loc>
-    <lastmod>2021-01-12T16:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-12_06a/</loc>
-    <lastmod>2021-01-12T14:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-12_04/</loc>
-    <lastmod>2021-01-12T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-12_05/</loc>
-    <lastmod>2021-01-12T12:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-12_04a/</loc>
+    <loc>https://phad.github.io/rwc2021/04a/</loc>
     <lastmod>2021-01-12T10:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-11_03/</loc>
-    <lastmod>2021-01-11T20:00:00+00:00</lastmod>
+    <loc>https://phad.github.io/rwc2021/04/</loc>
+    <lastmod>2021-01-12T12:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-11_02/</loc>
+    <loc>https://phad.github.io/rwc2021/05/</loc>
+    <lastmod>2021-01-12T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://phad.github.io/rwc2021/06a/</loc>
+    <lastmod>2021-01-12T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://phad.github.io/rwc2021/06/</loc>
+    <lastmod>2021-01-12T16:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://phad.github.io/rwc2021/07/</loc>
+    <lastmod>2021-01-12T20:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://phad.github.io/rwc2021/01/</loc>
+    <lastmod>2021-01-11T12:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://phad.github.io/rwc2021/02/</loc>
     <lastmod>2021-01-11T16:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://phad.github.io/rwc2021/2021-01-11_01/</loc>
-    <lastmod>2021-01-11T12:00:00+00:00</lastmod>
+    <loc>https://phad.github.io/rwc2021/03/</loc>
+    <lastmod>2021-01-11T20:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -217,14 +237,6 @@
   <url>
     <loc>https://phad.github.io/resume/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://phad.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://phad.github.io/tags/</loc>
   </url>
   
 </urlset>

@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Real World Crypto 2021 - Session 10: Formal Analysis &middot; Paul&#39;s 20% Time</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Paul Hadfield&#39;s 20% Time">
+		<meta name="description" content="Paul Hadfield is a software engineer, musician and tinkerer in London UK">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Paul&#39;s 20% Time">
+		<meta name="og:title" content="Real World Crypto 2021 - Session 10: Formal Analysis">
+		<meta name="og:url" content="https://phad.github.io/rwc2021/10/">
+		
+		<meta name="og:image" content="https://phad.github.io/images/phad-duck-256.png">
+		
+		
+
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		<!--[if lte IE 8]><script src='https://phad.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://phad.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://phad.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://phad.github.io/" class="image avatar"><img src="https://phad.github.io/images/phad-duck-256.png" alt="" /></a>
+	
+	
+		<h1>What I get up to when I&rsquo;m on my non-working days.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://phad.github.io/">Home</a></li>
+			
+				<li><a href="https://phad.github.io/resume/">CV</a></li>
+			
+				<li><a href="https://phad.github.io/rwc2021/">RWC</a></li>
+			
+				<li><a href="https://phad.github.io/posts/">Blog</a></li>
+			
+				<li><a href="https://phad.github.io/tags/">Tags</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Real World Crypto 2021 - Session 10: Formal Analysis</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-13 00:00:00 &#43;0000 UTC">2021-01-13</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+	</span>
+
+	<p>
+	    <p><a href="../2021-01-13_09">Prev</a> | <a href="..">Up</a> | <a href="../2021-01-14_11a">Next</a></p>
+<p>Session <a href="https://www.youtube.com/watch?v=IZcwl2viHeE">video</a></p>
+<hr>
+<p><a href="https://www.kevliao.com/"><strong>Kevin Liao</strong></a> (MIT) / <em>SoK: Computer-Aided Cryptography</em> / <a href="http://ia.cr/2019/1393">paper</a> <a href="https://youtu.be/IZcwl2viHeE?t=6">video</a></p>
+<p>HACLxN - verified generic SIMD crypto: used to prove functional correctness for OpenSSL</p>
+<p>Formal models != real world: design-level security, functional correctness, implementation-level security all differ, due to simplicfications, unaccounted side-channels, difference between what was verified and final machine code&hellip;</p>
+<p>Computer-aided crypto aims to close those gaps.</p>
+<hr>
+<p><a href="https://nadim.computer/"><strong>Nadim Kobeissi</strong></a> (NGIzero/nlnet) / <em>Verifpal: Cryptographic Protocol Analysis for the Real World</em> / <a href="http://verifpal.com/">verifpal.com</a> <a href="http://ia.cr/2019/971">paper</a> <a href="https://youtu.be/IZcwl2viHeE?t=934">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/3/slides.pdf">slides</a></p>
+<p>F* has been used to prove e.g. Signal protocol to be functionally correct</p>
+<p>ProVerif, Tamarin, CryptoVerif: these approaches make models of protocols</p>
+<p>Symbolic Model (idealised black boxes, fully automated) v.s. Computational Model (more nuanced, manually assisted).</p>
+<p><em>Seems Legit: Automated Analysis of subtle attacks on protocols that use signatures</em> (Katriel Cohn-Gordon, Cas Cremers)</p>
+<p>ProVerif and Tamarin both require very opaque looking code, hard to get into. Do they have to be that hard? Author says, yes, they do really. But maybe a new language could be easier to read and write ==&gt; Verifpal. It is intended for students or engineers to use, to be accessible, but is not as formally proven as the other two tools.</p>
+<p>VerifPal makes modeling protocols very readable, and generates readable diagrams. You have to use primitives out of the box, can&rsquo;t define new ones (use the more &lsquo;pro&rsquo; tools if you have to do that). It&rsquo;s great for getting meaningful feedback early in a design phase, for little investment. It&rsquo;s also great for teaching.</p>
+<p>There&rsquo;s VerifPal for VS Code!</p>
+<p>See also: <em>VerifPal Heroes: a book and online guide to protocal verification</em></p>
+
+	</p>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/hadfieldp" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/phad" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		<li><a href="//linkedin.com/in/hadfieldp" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+		
+		
+		
+		<li><a href="//instagram.com/hadfieldp" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>© Paul Hadfield</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://phad.github.io/js/jquery.min.js"></script>
+<script src="https://phad.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://phad.github.io/js/skel.min.js"></script>
+<script src="https://phad.github.io/js/util.js"></script>
+
+<script src="https://phad.github.io/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

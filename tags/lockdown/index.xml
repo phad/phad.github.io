@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>lockdown on Paul&#39;s 20% Time</title>
+    <link>https://phad.github.io/tags/lockdown/</link>
+    <description>Recent content in lockdown on Paul&#39;s 20% Time</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 10 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://phad.github.io/tags/lockdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Recent brewday: &#39;Locked Down and Bitter ESB&#39;</title>
+      <link>https://phad.github.io/posts/lockeddownandbitteresb/</link>
+      <pubDate>Sat, 10 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://phad.github.io/posts/lockeddownandbitteresb/</guid>
+      <description>My friend Tom and I were recently bemoaning the fact pubs are still shut for this third, interminable lock-down, and that despite the fact a lot of really good canned beer is available, we would actually quite like a decent pint of British ale.</description>
+    </item>
+    
+  </channel>
+</rss>

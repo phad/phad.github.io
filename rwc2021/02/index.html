@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Real World Crypto 2021 - Session 2: Group Messaging &middot; Paul&#39;s 20% Time</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Paul Hadfield&#39;s 20% Time">
+		<meta name="description" content="Paul Hadfield is a software engineer, musician and tinkerer in London UK">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Paul&#39;s 20% Time">
+		<meta name="og:title" content="Real World Crypto 2021 - Session 2: Group Messaging">
+		<meta name="og:url" content="https://phad.github.io/rwc2021/02/">
+		
+		<meta name="og:image" content="https://phad.github.io/images/phad-duck-256.png">
+		
+		
+
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		<!--[if lte IE 8]><script src='https://phad.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://phad.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://phad.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://phad.github.io/" class="image avatar"><img src="https://phad.github.io/images/phad-duck-256.png" alt="" /></a>
+	
+	
+		<h1>What I get up to when I&rsquo;m on my non-working days.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://phad.github.io/">Home</a></li>
+			
+				<li><a href="https://phad.github.io/resume/">CV</a></li>
+			
+				<li><a href="https://phad.github.io/rwc2021/">RWC</a></li>
+			
+				<li><a href="https://phad.github.io/posts/">Blog</a></li>
+			
+				<li><a href="https://phad.github.io/tags/">Tags</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Real World Crypto 2021 - Session 2: Group Messaging</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-11 00:00:00 &#43;0000 UTC">2021-01-11</time>&nbsp;&nbsp;
+
+
+
+
+
+
+
+	</span>
+
+	<p>
+	    <p><a href="../2021-01-11_01">Prev</a> | <a href="..">Up</a> | <a href="../2021-01-11_03">Next</a></p>
+<p>Session <a href="https://www.youtube.com/watch?v=3J1cocbzPik">video</a></p>
+<hr>
+<p><a href="https://pure.royalholloway.ac.uk/portal/en/persons/lenka-marekova(371a2632-c1c4-4866-8141-c4b99807d326).html"><strong>Lenka Marekova</strong></a> (RHUL) / <em>Mesh Messaging in Large-scale Protests: Breaking Bridgefy</em> / <a href="https://martinralbrecht.files.wordpress.com/2020/08/bridgefy-abridged.pdf">paper</a> <a href="https://youtu.be/3J1cocbzPik?t=35">video</a> <a href="">slides</a></p>
+<p>Bridgefy is a mesh-networked offline messaging app based on BT (classic, or BLE). Despite not being designed for use in a protest setting, that is how it has been adopted, eg. in BLM protests, and democracy protests in Hong Kong.</p>
+<p>Analysis required reverse-engineering of Android app.  This revealed numerous poor design decisions.  Oops, it used RSA &amp; PKCS#1v1.5 (deprecated) in ECB fashion. When combined with Gzip a padding oracale was available, Bleichenbacher attack w/ 2^17 msgs. Also users social graphs can be extracted, and log-ins MITMed.</p>
+<p>The attacks were verified using <a href="https://frida.re/">Frida</a>.</p>
+<p>Open questions: can security even be achieved in the mesh setting? And what security needs do protesters have?</p>
+<hr>
+<p><a href="http://www.marcedone.it/"><strong>Antonio Marcedone</strong></a> (Zoom Video Comms) / <em>E2E Encryption and Identity Properties for Zoom Meetings</em> <a href="http://github.com/zoom/zoom-e2e-whitepaper">paper</a> <a href="https://youtu.be/3J1cocbzPik?t=889">video</a></p>
+<p>Various similarities to Key Transparency / CONIKS / Keybase for identity</p>
+<hr>
+<p><a href="http://roeslpa.de/"><strong>Paul Rosler</strong></a> (Ruhr Uni) / <em>Resolving Concurrency in Group Ratcheting Protocols</em> <a href="http://ia.cr/2020/1171">paper</a> <a href="https://www.youtube.com/watch?v=3J1cocbzPik&amp;t=1855s">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/15/slides.pdf">slides</a></p>
+<p>PCS = Post-compromise security</p>
+<ul>
+<li>how a multi-participant messaging protocol recovers after an attacker gains one of the encryption keys</li>
+</ul>
+<p>IETF working in this area, defining MLS (messaging layer security)</p>
+
+	</p>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/hadfieldp" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/phad" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		<li><a href="//linkedin.com/in/hadfieldp" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+		
+		
+		
+		<li><a href="//instagram.com/hadfieldp" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>© Paul Hadfield</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://phad.github.io/js/jquery.min.js"></script>
+<script src="https://phad.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://phad.github.io/js/skel.min.js"></script>
+<script src="https://phad.github.io/js/util.js"></script>
+
+<script src="https://phad.github.io/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>
