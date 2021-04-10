@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Real World Crypto 2021 - Session 4: Signatures &middot; Paul&#39;s 20% Time</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Paul Hadfield&#39;s 20% Time">
+		<meta name="description" content="Paul Hadfield is a software engineer, musician and tinkerer in London UK">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Paul&#39;s 20% Time">
+		<meta name="og:title" content="Real World Crypto 2021 - Session 4: Signatures">
+		<meta name="og:url" content="https://phad.github.io/rwc2021/04-signatures/">
+		
+		<meta name="og:image" content="https://phad.github.io/images/phad-duck-256.png">
+		
+		
+
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		<!--[if lte IE 8]><script src='https://phad.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://phad.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://phad.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://phad.github.io/" class="image avatar"><img src="https://phad.github.io/images/phad-duck-256.png" alt="" /></a>
+	
+	
+		<h1>What I get up to when I&rsquo;m on my non-working days.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://phad.github.io/">Home</a></li>
+			
+				<li><a href="https://phad.github.io/resume/">CV</a></li>
+			
+				<li><a href="https://phad.github.io/rwc2021/">RWC</a></li>
+			
+				<li><a href="https://phad.github.io/posts/">Blog</a></li>
+			
+				<li><a href="https://phad.github.io/tags/">Tags</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Real World Crypto 2021 - Session 4: Signatures</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-12 00:00:00 &#43;0000 UTC">2021-01-12</time>&nbsp;&nbsp;
+
+
+
+
+
+
+   
+   
+       &nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp;&nbsp;
+       
+       <a class="article-category-link" href="https://phad.github.io/tags/rwc2021">RWC2021</a>
+       &middot;
+       
+       <a class="article-category-link" href="https://phad.github.io/tags/real-world-crypto">Real World Crypto</a>
+       
+       
+   
+
+
+	</span>
+
+	<p>
+	    <p><a href="../04a-invitedtalk">Prev</a> | <a href="..">Up</a> | <a href="../05-humanspolicycrypto">Next</a></p>
+<p>Session <a href="https://www.youtube.com/watch?v=jeQvDLPQsuw">video</a></p>
+<hr>
+<p><a href="https://akiratk0355.github.io/"><strong>Akira Takahashi</strong></a> (Aarhuis Uni) / <em>LadderLeak: Breaking ECDSA With Less Than One Bit Of Nonce Leakage</em> / <a href="http://ia.cr/2020/615">paper</a> <a href="https://youtu.be/jeQvDLPQsuw?t=38">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/13/slides.pdf">slides</a></p>
+<p>ECDSA nonce is extremely sensitive, &lt;1bit leakage per signature is exploitable using attacks based on HNP</p>
+<p>HNP - Hidden Number Problem (Dan Boneh / Venkatesan in 1996)<br>
+HNP is at the heart of many recent real-world vulns in ECDSA/DH</p>
+<p>Nonce leakage can be attacked via Lattice attacks or Fourier analysis (first done by Bleichenbacher, see <a href="https://blog.cr.yp.to/20191024-eddsa.html">https://blog.cr.yp.to/20191024-eddsa.html</a>)</p>
+<p>Ladder leakage: timing leakage from Montgomery ladder<br>
+(attacks in the talk can also be applied to Schnorr signatures)</p>
+<hr>
+<p><a href="https://twitter.com/real_or_random"><strong>Tim Ruffing</strong></a> (Blockstream) / <em>MuSig2: Simple Two-Round Schnorr Multi-Signatures</em> / <a href="http://ia.cr/2020/1261">paper</a> <a href="https://youtu.be/jeQvDLPQsuw?t=791">video</a> <a href="https://slides.com/real-or-random/musig2-rwc-2021">slides</a></p>
+<p>Key idea in MuSig2: Every signer uses a random linear combination of multiple pre-nonces as a nonce.</p>
+<ul>
+<li>signatures look like ordinary Schnorr sigs, are compact and permit fast verification</li>
+<li>practical/simple 2-round signing protocol where first round can be precomputed without the message, making eventual signing almost non-interactive</li>
+<li>see paper for a funny story alluded to in the talk</li>
+</ul>
+<p>Multisigs: <em>n</em> signers get together to create a single signature (n-of-n ie. all of <em>n</em> must be present, not threshold which is t-of-n where <em>t &lt; n</em> and where only t need to be present).</p>
+<p>Work motivated by Bitcoin where multi-sigs ease shared ownership. Bitcoin is moving from ECDSA to Schnorr.</p>
+<p>Schnorr signatures used in Bitcoin on-chain:</p>
+<ul>
+<li>used instead of ECDSA because Schnorr facilitates more advanced signing protocols, e.g. multi-sig, threshold-sig, blind-sig)</li>
+<li>on-chain is better for consensus because off-chain protocols are not visible to verifiers</li>
+<li>Schnorr PK is created non-interactively; Schnorr sigs are verified interactively</li>
+</ul>
+<p>Multi-sig require &gt;1 PKs to be aggregated. The signers also contribute to the nonce.</p>
+<hr>
+<p><a href="https://github.com/emlun"><strong>Emil Lundberg</strong></a> (Yubico, Surrey Centre for CyberSecurity, Wire) / <em>Asynchronous Remote Key Generation: An Analysis of Yubico’s Proposal for W3C WebAuthn</em> / <a href="http://ia.cr/2020/1004">paper</a> <a href="https://youtu.be/jeQvDLPQsuw?t=1804">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/91/slides.pdf">slides</a></p>
+<p>Introduces new crypto primitive: ARKG (Asynchronous remote key generation), proposed by Yubico, and implemented in <a href="https://webauthn.io/">WebAuthn</a> <a href="https://webauthn.guide/">guide</a></p>
+<p>WebAuthn (2019) is <a href="https://www.w3.org/TR/webauthn-2/">W3C proposal</a> of an API for accessing public key credentials. Backed by various types of hardware token (aka authenticators):</p>
+<ul>
+<li>key properties: two pubkeys generated by the same authenticator are not linkable, this is good for privacy/anonymity</li>
+<li>authenticator attestation: authenticator devices can prove their make/model, which is desirable for certain finance or government applications</li>
+</ul>
+<p>You&rsquo;re a bit screwed if you lose your device, so common pattern is to have a backup device kept at home: however for every service you use device to auth to, you need to register both primary and backup devices. This is inconvenient, error-prone and backups are easily lost.</p>
+<p>Yubico&rsquo;s proposal is that primary and back-up authenticator devices are paired together. You keep backup stored safe at home, and only work using the primary device. if it becomes necessary to use back-up device, it then becomes the new primary device. Later when you recover the old primary it becomes the new backup through another pairing. This process is modeled using AKRG.</p>
+<p>The async aspect is that the primary device generates public keys fo rthe backup device, then if primary is lost, the backup device can later generate the corresponding private keys.</p>
+
+	</p>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/hadfieldp" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/phad" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		<li><a href="//linkedin.com/in/hadfieldp" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+		
+		
+		
+		<li><a href="//instagram.com/hadfieldp" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>© Paul Hadfield</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://phad.github.io/js/jquery.min.js"></script>
+<script src="https://phad.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://phad.github.io/js/skel.min.js"></script>
+<script src="https://phad.github.io/js/util.js"></script>
+
+<script src="https://phad.github.io/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

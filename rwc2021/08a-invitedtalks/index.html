@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Real World Crypto 2021 - Session 8: Invited Talks &middot; Paul&#39;s 20% Time</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Paul Hadfield&#39;s 20% Time">
+		<meta name="description" content="Paul Hadfield is a software engineer, musician and tinkerer in London UK">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Paul&#39;s 20% Time">
+		<meta name="og:title" content="Real World Crypto 2021 - Session 8: Invited Talks">
+		<meta name="og:url" content="https://phad.github.io/rwc2021/08a-invitedtalks/">
+		
+		<meta name="og:image" content="https://phad.github.io/images/phad-duck-256.png">
+		
+		
+
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		<!--[if lte IE 8]><script src='https://phad.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://phad.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://phad.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://phad.github.io/" class="image avatar"><img src="https://phad.github.io/images/phad-duck-256.png" alt="" /></a>
+	
+	
+		<h1>What I get up to when I&rsquo;m on my non-working days.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://phad.github.io/">Home</a></li>
+			
+				<li><a href="https://phad.github.io/resume/">CV</a></li>
+			
+				<li><a href="https://phad.github.io/rwc2021/">RWC</a></li>
+			
+				<li><a href="https://phad.github.io/posts/">Blog</a></li>
+			
+				<li><a href="https://phad.github.io/tags/">Tags</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Real World Crypto 2021 - Session 8: Invited Talks</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-13 00:00:00 &#43;0000 UTC">2021-01-13</time>&nbsp;&nbsp;
+
+
+
+
+
+
+   
+   
+       &nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp;&nbsp;
+       
+       <a class="article-category-link" href="https://phad.github.io/tags/rwc2021">RWC2021</a>
+       &middot;
+       
+       <a class="article-category-link" href="https://phad.github.io/tags/real-world-crypto">Real World Crypto</a>
+       
+       
+   
+
+
+	</span>
+
+	<p>
+	    <p><a href="../07-lightningtalks">Prev</a> | <a href="..">Up</a> | <a href="../08-contacttracing">Next</a></p>
+<p><a href="http://carmelatroncoso.com/"><strong>Carmela Troncoso</strong></a> (EPFL) / <em>Privacy by Design &ndash; From Theory to Practice in the Context of COVID-19 Contact Tracing</em> <a href="https://www.youtube.com/watch?v=72G2i4mzshw">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/1003/slides.pdf">slides</a></p>
+<p>Discussion of security &amp; privacy concerns of contact-tracing apps<br>
+They were built under time pressure yet had to be robust, reliable and scalable<br>
+Had to keep scope simple, avoiding too much new tech, and using existing infra where possible</p>
+<p>She worked with group to specify Decentralized Privacy-Preserving Proximity Tracing<br>
+Key ideas were:</p>
+<ul>
+<li>BLE (bluetooth low-energy) beacons</li>
+<li>crypto for unlinkability</li>
+<li>decentralisation of the matching operations to preserve privacy and limit purpose</li>
+</ul>
+<p>They had plans to design fancy crypto (DP3T paper) for all this, but then reality bit:</p>
+<p>OS Vendors have to be involved because of contraints (must run in b/g - Apple have to be involved; preserve CPU and battery usage - Google &amp; Apple are involved; compatibility with old OS versions - G &amp; A must be involved). Cannot consume much bandwidth on the users' devices as they may have limited b/w quota and will uninstall if they think the tracing app is hogging it</p>
+<p>G &amp; A both implemented the protocol and the API that tracing apps must use. This had implications for privacy. The protocol is public. Privacy concerns dictated that RPI (random identifiers) change daily.</p>
+<p>Apps collect RPIs they see and record bluetooth signal power as a proxy for distance.</p>
+<p>If user tests positive they are given access key and upload their device&rsquo;s recent contacts. Other users get daily download of all positive users' keys, so can alert if one matches an identity the user was in contact with.</p>
+<p>No-one ever has identity, location or other info about other users. There&rsquo;s no info available for abuse. The system automatically sunsets itself by design as users stop participating, because the data servers retain is useless for any other purpose.</p>
+<p>Crypto design has some crucial properties:</p>
+<ul>
+<li>only true positive test subjects are allowed to upload, to prevent abuse or false alarms. This is achieved using commitments.</li>
+</ul>
+<p>The crypto seems good but realizing it in different national health regimes had mixed success due to different levels of digitization available in their processes</p>
+<p>Privacy sometimes requires transmissions to be delayed to avoid identifying a user, but in this app they had to upload as soon as a diagnosis was available for epidemiological reasons</p>
+<p>Dummy strategy - they wanted to have dummy traffic to servers intermingled with user&rsquo;s legit upload traffic to make it hard to identify users bywho have positive diagnosis. That was made hard for them by the choices made by A &amp; G who didn&rsquo;t have privacy in mind in their API design.</p>
+<p>Study in Switzerland shows that users of the app were notified of exposure 1 day quicker on average than those reached by manual contact tracers:</p>
+<ul>
+<li>They had to consider carefully what was logged at load balancers in the Swiss cloud realization of the server infra: coarse logging only, counts only for stats, etc. to avoid identifying users in server or LB logs</li>
+<li>Privacy eng goes well beyond crypto; doing good privacy eng in an agile &amp; service world is &ldquo;exhausting&rdquo;</li>
+<li>Effective integration of the tech with the people who must use it is essential for success (i.e. not just users, but doctors must be able to use it properly)</li>
+</ul>
+<hr>
+<p><a href="https://people.eng.unimelb.edu.au/vjteague/"><strong>Vanessa Teague</strong></a> (Thinking Cyber Security / Australian National Uni) / <em>Not as Private as We Had Hoped &ndash; Unintended Privacy Problems in Some Centralized and Decentralized COVID-19 Exposure Notification Systems</em> <a href="https://github.com/vteague/contactTracing/blob/master/blog/2020-12-16TheImportanceOfShufflingInGAEN.md">blog</a> <a href="https://www.youtube.com/watch?v=ne-2Le_egx8">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/1004/slides.pdf">slides</a></p>
+<p>Social graph inference - centralized apps, without enough care, could allow govts to reconstruct social graphs. This was the big concern being voiced early in 2020 about contact tracing. But it turned out that user privacy was damaged much more by buggy implementations:</p>
+<ul>
+<li>AU&rsquo;s COVIDsafe app was centralized, using BLE beacons.</li>
+<li>initially it killed battery and caused uninstalls (on Google Play)</li>
+<li>not running the app is great for privacy!</li>
+<li>iPhone app) buggy use of encryption caused message truncation, msgs were dropped before hitting the DB. Also great for privacy!</li>
+</ul>
+<p>The iPhone app, once it had maxed the num concurrent BT connections, would drop all future ones. This also killed other apps wanting to use BT. Great for privacy but bad for users with BT devices like continuous glucose monitoring. Two iPhone devices in screenlock will not record proximity.</p>
+<p>Good observation: in most apps, security or privacy problems become well known. But in the contact tracing apps, failures are generally undetectable by users: indistinguishable from never having contacted COVID+ people.</p>
+<p>These failures mean that Aus has little idea how many ppl still use the app and what fraction of proxmity events it detects.</p>
+<p>For Android CVE-2020-12856 allowed an attacker to track your phone and obtain it&rsquo;s long-term identity key (IRK) which:</p>
+<ul>
+<li>permits phone to be tracked,</li>
+<li>even after the user had uninstalled the app!</li>
+</ul>
+<p>Massive privacy failure.</p>
+<p>A different app leaked social graph edges if users opted-in to uploading their additional detailed exposure info</p>
+<p>Description of bug in early version of A&amp;G exposure notif API where if malicious server has access to contacts disclosed to human tracers they can identify whether the user failed to disclose an additional contact by ordering the list of known contacts uploaded by the discloser in a certain way. This was fixed by ensuring the lists are shuffled on receive and again on send.</p>
+
+	</p>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/hadfieldp" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/phad" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		<li><a href="//linkedin.com/in/hadfieldp" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+		
+		
+		
+		<li><a href="//instagram.com/hadfieldp" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>© Paul Hadfield</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://phad.github.io/js/jquery.min.js"></script>
+<script src="https://phad.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://phad.github.io/js/skel.min.js"></script>
+<script src="https://phad.github.io/js/util.js"></script>
+
+<script src="https://phad.github.io/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>

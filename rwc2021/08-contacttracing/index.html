@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+
+<!-- 
+Strata by HTML5 UP
+html5up.net | @n33co
+Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Real World Crypto 2021 - Session 8: Contact Tracing &middot; Paul&#39;s 20% Time</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="author" content="Paul Hadfield&#39;s 20% Time">
+		<meta name="description" content="Paul Hadfield is a software engineer, musician and tinkerer in London UK">
+		<meta http-equiv="content-language" content="en-us" />
+
+		
+		<meta name="og:site_name" content="Paul&#39;s 20% Time">
+		<meta name="og:title" content="Real World Crypto 2021 - Session 8: Contact Tracing">
+		<meta name="og:url" content="https://phad.github.io/rwc2021/08-contacttracing/">
+		
+		<meta name="og:image" content="https://phad.github.io/images/phad-duck-256.png">
+		
+		
+
+		<meta name="generator" content="Hugo 0.80.0" />
+
+		<!--[if lte IE 8]><script src='https://phad.github.io/js/ie/html5shiv.js'></script><![endif]-->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://phad.github.io/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="https://phad.github.io//css/ie8.css"><![endif]-->
+
+		
+		
+	</head>
+
+	<body id="top">
+		<!-- Header -->
+<header id="header">
+	
+	<a href="https://phad.github.io/" class="image avatar"><img src="https://phad.github.io/images/phad-duck-256.png" alt="" /></a>
+	
+	
+		<h1>What I get up to when I&rsquo;m on my non-working days.</h1>
+	
+
+	
+		<nav id="sidebar">
+			<ul>
+			
+				<li><a href="https://phad.github.io/">Home</a></li>
+			
+				<li><a href="https://phad.github.io/resume/">CV</a></li>
+			
+				<li><a href="https://phad.github.io/rwc2021/">RWC</a></li>
+			
+				<li><a href="https://phad.github.io/posts/">Blog</a></li>
+			
+				<li><a href="https://phad.github.io/tags/">Tags</a></li>
+			
+			</ul>
+		</nav>
+	
+</header>
+
+
+		<!-- Main -->
+		<div id="main">
+			
+	<span>
+		<h1>Real World Crypto 2021 - Session 8: Contact Tracing</h1>
+
+		<i class="fa fa-calendar"></i>&nbsp;&nbsp;
+<time datetime="2021-01-13 00:00:00 &#43;0000 UTC">2021-01-13</time>&nbsp;&nbsp;
+
+
+
+
+
+
+   
+   
+       &nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp;&nbsp;
+       
+       <a class="article-category-link" href="https://phad.github.io/tags/rwc2021">RWC2021</a>
+       &middot;
+       
+       <a class="article-category-link" href="https://phad.github.io/tags/real-world-crypto">Real World Crypto</a>
+       
+       
+   
+
+
+	</span>
+
+	<p>
+	    <p><a href="../08a-invitedtalks">Prev</a> | <a href="..">Up</a> | <a href="../09-hardware">Next</a></p>
+<p>Session <a href="https://www.youtube.com/watch?v=_m6quT9hiyk">video</a></p>
+<hr>
+<p><a href="https://www-cs.ccny.cuny.edu/~rosario/"><strong>Rosario Gennaro</strong></a> (City College NYC/Prep4All) / <em>Exposure Notification System May Allow for Large-Scale Voter Suppression</em> <a href="https://youtu.be/_m6quT9hiyk?t=66">video</a></p>
+<p>In the USA contact-tracing apps left to individual states due to fed govt lack of interest.  All who launched use the GAEN (Google &amp; Apple) framework but only 17 states have apps!  Adoption very low (&lt;10%) compared with Europe (&gt;20-30%)</p>
+<p>Comparisons made with Prep4All (advocates for PrEP therapy for HIV avoidance).</p>
+<p>Integrity attacks against GAEN:</p>
+<ul>
+<li>doesn&rsquo;t protect against replay attacks</li>
+<li>RPI codes could be captured and replayed in a different location</li>
+<li>folk can set up relaying BT beacons</li>
+<li>RPIs can be associated to infected people if you go to a testing site and gather data</li>
+</ul>
+<p>Because of timing of US Election in the thick of COVID-19 there was concern that voter suppression could be effected by faking notification of exposure using attacks above. (It&rsquo;s known that rainy days affect election outcomes as republicans are more likely to turn out)</p>
+<p>The authors requested Google &amp; Apple should suspend exposure notifications in the week prior to election day&hellip; this was refused. G &amp; A thought the attacks were not rational, requiring too many resouces &amp; investments compared to say a faked SMS campaign.</p>
+<p>If an attacker is <em>willing to get infected</em> they could sell their auth codes to a black market&hellip;</p>
+<p>He reckons that voter suppression didn&rsquo;t occur not because of the difficulty of the attacks described but just because take-up of the tracing apps is so low.</p>
+<hr>
+<p>An aside, and OMG! <a href="https://eprint.iacr.org/2020/1393.pdf">On the Effectiveness of Time Travel to Inject COVID-19 Alerts</a> - actually a serious paper about things you can do if your phone clock is set wrong.</p>
+<hr>
+<p><a href="https://eyalro.net/"><strong>Eyal Ronen</strong></a> (Bar Ilan Uni) / <em>Privacy-Preserving Bluetooth Based Contact Tracing - One Size Does Not Fit All</em> <a href="https://www.youtube.com/watch?v=_m6quT9hiyk&amp;t=1051s">video</a></p>
+<p>Israel&rsquo;s manual contact tracing - all reports of being in public places end up with locations and times being published in newspapers and websites!</p>
+<p>Israeli security service did automatic tracing using data from cell networks</p>
+<ul>
+<li>this was highly inaccurate</li>
+<li>so israel built decentralized BLE tracing app</li>
+</ul>
+<p>Privacy / explainability tradeoff:</p>
+<ul>
+<li>private: &lsquo;you were exposed last Thurs&rsquo;</li>
+<li>explainable: &lsquo;you were in contact with Joe Bloggs at the mall last Thurs 19:32&rsquo;</li>
+</ul>
+<p>Location tracking / coverage tradeoff:</p>
+<ul>
+<li>not everyone has a smartphone, some have dumbphones</li>
+<li>some folk don&rsquo;t carry smartphone for religious reasons</li>
+</ul>
+<p>Approach using GPS and location logging that never left phone was used for some local-only alerts (ie. no server integration)</p>
+<ul>
+<li>GPS wasn&rsquo;t too accurate tho (buildings, etc.) and Google/Apple wouldn&rsquo;t allow GPS data to be used in conjunction with GAEN</li>
+</ul>
+<p>Hashomer used BLE but without GAEN. It worked well in general but was scuppered by public perception of contact-trace apps as surveillance tools, especially after earlier involvement of security services.</p>
+<hr>
+<p><a href="https://www.iaik.tugraz.at/person/lukas-helminger/"><strong>Lukas Helminger</strong></a> (TU Graz, Know-Center) / <em>Privately Connecting Mobility to Infectious Diseases via Applied Cryptography</em> / <a href="http://ia.cr/2020/522">paper</a> <a href="https://youtu.be/_m6quT9hiyk?t=1795">video</a> <a href="https://iacr.org/submit/files/slides/2021/rwc/rwc2021/72/slides.pdf">slides</a></p>
+<p><a href="https://covid-heatmap.iaik.tugraz.at/en/">COVID Heatmap</a></p>
+<p>The speaker presents an approach that doesn&rsquo;t require smart-phones or contact-tracing. It is good for dumb phones as well as smart. That&rsquo;s because it&rsquo;s based on studies of human mobility patterns from mobile phone data. This has been previously used to study spread of malaria /dengue / cholera.</p>
+<p>Starts with aggregate data from all of a network operator&rsquo;s subscribers.  Historically this approach has worked only if there are lots of cases or mass-gatherings.</p>
+<p>Improvements made by joining information about individuals who are infected. That info needs to be protected, so they use homomorphic encryption and zero-knowledge proofs and differential Privacy.</p>
+<p>Steps:</p>
+<ol>
+<li>encrypt subscribers phone numbers with homomorphic encryption;</li>
+<li>these are sent to mobile operators;</li>
+<li>it forms one dimension of a large matrix.</li>
+<li>The other dimension is the set of mobile subscribers who are moving;</li>
+<li>The matrix cell is set to 1 if subscriber is infected, 0 otherwise.</li>
+<li>something something &hellip; end up with a heat map.</li>
+</ol>
+<p>Seems computationally expensive but isn&rsquo;t: for a large city like NYC, the computation took &lt;2hr and cost only $10 on AWS.</p>
+
+	</p>
+
+	
+
+		</div>
+
+		<!-- Footer -->
+<footer id="footer">
+	<ul class="icons">
+		
+		
+		
+		<li><a href="//twitter.com/hadfieldp" target="_blank" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		
+		
+		<li><a href="//github.com/phad" target="_blank" class="icon fa-github"><span class="label">GitHub</span></a></li>
+		
+		
+		
+		<li><a href="//linkedin.com/in/hadfieldp" target="_blank" class="icon fa-linkedin-square"><span class="label">Linkedin</span></a></li>
+		
+		
+		
+		<li><a href="//instagram.com/hadfieldp" target="_blank" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/#contact-form" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+		
+		
+		<li><a href="https://phad.github.io/index.xml" class="icon fa-rss" type="application/rss+xml"><span class="label">RSS</span></a></li>
+		
+	</ul>
+
+	<ul class="copyright">
+		
+		<li>© Paul Hadfield</li>
+		
+		<li>Design: <a href="//html5up.net">HTML5 UP</a></li>
+		
+	</ul>
+</footer>
+
+<!-- Scripts -->
+<script src="https://phad.github.io/js/jquery.min.js"></script>
+<script src="https://phad.github.io/js/jquery.poptrox.min.js"></script>
+<script src="https://phad.github.io/js/skel.min.js"></script>
+<script src="https://phad.github.io/js/util.js"></script>
+
+<script src="https://phad.github.io/js/main.js"></script>
+
+
+
+
+
+	</body>
+</html>
